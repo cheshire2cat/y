@@ -379,8 +379,8 @@ class LibraryUpdateJob(private val context: Context, workerParams: WorkerParamet
             .groupBy { it.source }
             .filterKeys { sourceManager.get(it) !is UnmeteredSource }
             .maxOfOrNull { it.value.size } ?: 0
-        if (largestSourceSize > MANGA_PER_SOURCE_QUEUE_WARNING_THRESHOLD) {
-            notifier.showQueueSizeWarningNotification()
+        // if (largestSourceSize > MANGA_PER_SOURCE_QUEUE_WARNING_THRESHOLD) {
+        //    notifier.showQueueSizeWarningNotification()
         }
     }
 
